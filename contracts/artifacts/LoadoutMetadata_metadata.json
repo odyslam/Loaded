@@ -1,0 +1,221 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "emitString",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "equipment",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "levelBars",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "perks",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "primaryWeaponLevels",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "primaryWeapons",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "secondaryWeaponLevels",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "secondaryWeapons",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Odysseas Lamtzidis",
+			"details": "Inherit from this contract and use it to generate metadata for your Loadout",
+			"kind": "dev",
+			"methods": {},
+			"title": "Helper contract for generating metadata information about Loadouts. Heavily inspired by lootloose smart contract by Georgios Konstantopoulos.",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"LoadoutMetadata.sol": "LoadoutMetadata"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"LoadoutComponents.sol": {
+			"keccak256": "0x485b198e990186c27254438c18aa8b352258b1297a6a62946d49e32b5b084ec7",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://01c41dc69a1caa3d4ef2f2b0bd6617a952b9860cd119474745b218c60520fdcd",
+				"dweb:/ipfs/QmUWceQngMH48xQax8sQkimkjWCqAGVLzMoeDAcnowfvgF"
+			]
+		},
+		"LoadoutMetadata.sol": {
+			"keccak256": "0x8d8f0d5ab4f7504ba3538589c8c620b2af04ebebb377adc0dd7dcc145703fc3e",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://89da489f2ec57d0d30355bdfb90965a2a3e772f2b655ef6532444772a5b4b352",
+				"dweb:/ipfs/QmSEAVK1avVcay7Cv61NbwJTwHkgJGzR8GdQJSAWSKg9tm"
+			]
+		},
+		"MetadataUtils.sol": {
+			"keccak256": "0x712fad3706a5f23a055108aceb17cc0e902c769093b8dc75a891447ef116002f",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://0de7ab804a7fff1adfddc9f6a87d2fb34c4629d8014f941dde32695d2de5ae90",
+				"dweb:/ipfs/QmfXrhTMvf9zRxihaNsD2RuTHJwqs57cwRfdZDbj5SUUZg"
+			]
+		}
+	},
+	"version": 1
+}
