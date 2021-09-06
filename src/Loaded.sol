@@ -7,13 +7,13 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-import "./LoadoutMetadata.sol";
+import "./LoadedMetadata.sol";
 
 /// @title Loadout
 /// @author Odysseas Lamtzidis
 /// @notice Allows "opening" your ERC721 Loot bags and extracting the items inside it
 /// The created tokens are ERC1155 compatible, and their on-chain SVG is their name
-contract Loadout is ERC721, LoadoutMetadata, Ownable, ReentrancyGuard{
+contract Loaded is ERC721, LoadedMetadata, Ownable, ReentrancyGuard{
     // The OG Loot bags contract
     // No need for a URI since we're doing everything onchain
     constructor() ERC721("Loadout", "LOADOUT") Ownable() {}

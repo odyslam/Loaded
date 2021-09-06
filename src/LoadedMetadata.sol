@@ -1,13 +1,13 @@
 //SPDX-License-Identifier: GPL-3.0-or-later
 pragma solidity ^0.8.0;
 
-import "./LoadoutComponents.sol";
+import "./LoadedComponents.sol";
 import {Base64, toString} from "./MetadataUtils.sol";
 
 /// @title Helper contract for generating metadata information about Loadouts. Heavily inspired by lootloose smart contract by Georgios Konstantopoulos.
 /// @author Odysseas Lamtzidis
 /// @dev Inherit from this contract and use it to generate metadata for your Loadout
-contract LoadoutMetadata is LoadoutComponents{
+contract LoadedMetadata is LoadedComponents{
     string tokenName = unicode"Loaded - ︻デ═一 #";
     function buildSVG(uint256 tokenId) internal view returns (string memory) {
         string[] memory parts = new string[](34);

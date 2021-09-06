@@ -6,7 +6,7 @@ import {toString} from "./MetadataUtils.sol";
 /// @author Odysseas Lamtzidis
 /// @notice Based
 /// The created tokens are ERC1155 compatible, and their on-chain SVG is their name
-contract LoadoutComponents {
+contract LoadedComponents{
     string[48] internal primaryWeapons= [
         "SIG MCX", //assault rifles, index = 0
         "M4A1",
