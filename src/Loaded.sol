@@ -18,13 +18,13 @@ contract Loaded is ERC721, LoadedMetadata, Ownable, ReentrancyGuard{
     // No need for a URI since we're doing everything onchain
     constructor() ERC721("Loadout", "LOADOUT") Ownable() {}
 
-    function claim(uint256 tokenId) public nonReentrant {
-        require(tokenId > 0 && tokenId < 7778, "Token ID invalid");
+    function locknload(uint256 tokenId) public nonReentrant {
+        require(tokenId > 0 && tokenId < 9643, "Ser, Loaded has been already locked or you entered an invalid ID");
         _safeMint(_msgSender(), tokenId);
     }
 
-    function ownerClaim(uint256 tokenId) public nonReentrant onlyOwner {
-        require(tokenId > 7777 && tokenId < 8001, "Token ID invalid");
+    function commanderLocknload(uint256 tokenId) public nonReentrant onlyOwner {
+        require(tokenId > 9642 && tokenId < 10001, "Ser, Loaded has been already locked or you are not the commander");
         _safeMint(owner(), tokenId);
 }
     function tokenURI(uint256 tokenId) override public view returns (string memory)
