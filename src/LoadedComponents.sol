@@ -1,12 +1,12 @@
 //SPDX-License-Identifier: GPL-3.0-or-later
 pragma solidity ^0.8.0;
 import {toString} from "./MetadataUtils.sol";
-
+import "ds-test/test.sol";
 /// @title Loadout Components
 /// @author Odysseas Lamtzidis
 /// @notice Based
 /// The created tokens are ERC1155 compatible, and their on-chain SVG is their name
-contract LoadedComponents{
+contract LoadedComponents is DSTest{
     string[48] internal primaryWeapons= [
         "SIG MCX", //assault rifles, index = 0
         "M4A1",
@@ -54,7 +54,7 @@ contract LoadedComponents{
        "BARRETT M82 .50", // sniper rifles, index = 43
         "AX50",
         "DRAGUNOV",
-        "HDR",
+        "M40 RIFLE",
         "L96A1"
     ];
     // attributes of every weapon, scale of 10
@@ -123,7 +123,7 @@ contract LoadedComponents{
    ];
 
     string[] internal levelBars = [
-        unicode"",
+        unicode" ",
         unicode"█",
         unicode"██",
         unicode"███",
@@ -148,7 +148,7 @@ contract LoadedComponents{
         "FGM-148",
         "9K32 STRELA-2",
         "COMBAT KNIFE", //melee, index = 10
-        "RIOT SHIELF",
+        "RIOT SHIELD",
         "KARAMBIT"
 
     ];
@@ -191,7 +191,7 @@ contract LoadedComponents{
         "DEAD SILENCE",
         "TOUGHNESS",
         "HARD WIRED",
-        "RECOVER"
+        "RECOVER",
         "LAST STAND",
         "UAV JAMMER",
         "IRON LUNGS",
@@ -201,10 +201,10 @@ contract LoadedComponents{
 
     function random(string memory input)
     internal
-    pure
+    view
     returns (uint256)
     {
-        return uint256(keccak256(abi.encodePacked(input)));
+    return uint256(keccak256(abi.encodePacked(input)));
     }
 
     function getPrimaryWeapon(uint256 tokenId)
@@ -242,13 +242,13 @@ contract LoadedComponents{
         uint256 sourceArrayLength
     )
     internal
-    pure
+   view
     returns (uint256 ) {
         uint256 component;
         uint256 rand = random(
-            string(abi.encodePacked(keyPrefix, toString(tokenId)))
+        string(abi.encodePacked(keyPrefix, toString(tokenId)))
         );
-        component = rand  % sourceArrayLength;
+        component = rand % sourceArrayLength;
         return component;
     }
 }
