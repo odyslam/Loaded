@@ -1,3 +1,7 @@
+-include .env
+
+install: update npm solc
+
 install: update npm solc
 
 # dapp deps
@@ -16,4 +20,30 @@ build  :; dapp build
 test   :; dapp test # --ffi # enable if you need the `ffi` cheat code on HEVM
 clean  :; dapp clean
 lint   :; yarn run lint
-deploy :; ./scripts/deploy.sh
+estimate :; ./scripts/estimate.sh ${contract}
+size   :;   ./scripts/contract_size.sh ${contract}
+
+# returns the URL to deploy to a hosted Alchemy node
+# requires the API_KEY env var to be set
+# the first argument determines the network
+define network
+	https://eth-$1.alchemyapi.io/v2/${ALCHEMY_API_KEY}
+endef
+
+# Deployment helpers
+deploy :; @(source .env && ./scripts/deploy.sh)
+
+source: source .env
+
+# mainnet
+deploy-mainnet: export ETH_RPC_URL = $(call network,mainnet)
+deploy-mainnet: deploy
+
+# rinkeby
+deploy-rinkeby: export ETH_RPC_URL = $(call network,rinkeby)
+deploy-rinkeby: deploy
+
+check-api-key:
+ifndef ALCHEMY_API_KEY
+	$(error ALCHEMY_API_KEY is undefined)
+endif
