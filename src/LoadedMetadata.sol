@@ -4,9 +4,9 @@ pragma solidity ^0.8.0;
 import "./LoadedComponents.sol";
 import {Base64, toString} from "./MetadataUtils.sol";
 
-/// @title Helper contract for generating metadata information about Loadouts. Heavily inspired by lootloose smart contract by Georgios Konstantopoulos.
+/// @title Helper contract for generating metadata information about Loadouts.
 /// @author Odysseas Lamtzidis
-/// @dev Inherit from this contract and use it to generate metadata for your Loadout
+/// @dev Instead of inheriting from ths contract, you can use the public arrays to pull weapons and stats for your contracts.
 contract LoadedMetadata is LoadedComponents{
     string tokenName = unicode"Loaded - ︻デ═一 #";
     function buildSVG(uint256 tokenId) internal view returns (string memory) {
@@ -36,7 +36,7 @@ contract LoadedMetadata is LoadedComponents{
         parts[9] = levelBars[secondaryWeaponStats[1]];
         parts[10] = '</tspan><tspan x="270" y="261">FIRE RATE</tspan><tspan x="326" y="261" >';
         parts[11] = levelBars[secondaryWeaponStats[2]];
-        parts[12] = '</tspan></text><text font-size="20" line-spacing="30" <tspan x="40" y="330">';
+        parts[12] = '</tspan></text><text font-size="20" line-spacing="30"><tspan x="40" y="330">';
         // parts[13]
         // parts[14]
         // parts[15]
@@ -50,11 +50,11 @@ contract LoadedMetadata is LoadedComponents{
         parts[23] = perks[indexes[2]];
         parts[24] = '</tspan></text><text font-size="20" x="40" y="197">';
         // parts[26]
-        parts[27] = '</text><text font-size="10" line-spacing="20" letter-spacing="0.416666667"<tspan x="40" y="221">DAMAGE</tspan><tspan x="96" y="221">';
+        parts[27] = '</text><text font-size="10" line-spacing="20" letter-spacing="0.416666667"><tspan x="40" y="221">DAMAGE</tspan><tspan x="96" y="221">';
         parts[28] = levelBars[primaryWeaponStats[0]];
-        parts[29] = '</tspan><tspan x="40" y="241">ACCURACY</tspan><tspan x="86.7033333" y="241"</tspan><tspan x="96" y="241">';
+        parts[29] = '</tspan><tspan x="40" y="241">ACCURACY</tspan><tspan x="96" y="241">';
         parts[30] = levelBars[primaryWeaponStats[1]];
-        parts[31] = '</tspan><tspan x="40" y="261">FIRE RATE</tspan><tspan x="96" y="261" >';
+        parts[31] = '</tspan><tspan x="40" y="261">FIRE RATE</tspan><tspan x="96" y="261">';
         parts[32] = levelBars[primaryWeaponStats[2]];
         parts[33] = '</tspan></text></svg>';
         bytes memory output5 = abi.encodePacked(abi.encodePacked(parts[0], parts[2], parts[3], parts[4], parts[5], parts[6], parts[7] ,parts[8], parts[9]),
