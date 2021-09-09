@@ -1,6 +1,7 @@
 //SPDX-License-Identifier: GPL-3.0-or-later
 pragma solidity ^0.8.0;
 
+//@notice helper function to convert a  uint to string. Taken from the lootloose repo.
 function toString(uint256 value) pure returns (string memory) {
     // Inspired by OraclizeAPI's implementation - MIT license
     // https://github.com/oraclize/ethereum-api/blob/b42146b063c7d6ee1358846c198246239e9360e8/oraclizeAPI_0.4.25.sol
