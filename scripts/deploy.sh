@@ -6,7 +6,7 @@ RPC_URL=${ETH_RPC_URL:-http://localhost:8545}
 # Mainnet loot address
 # Default to it if nothing is provided
 # Deploy.
-LoadedAddress=$(deploy ${contract});
+LoadedAddress=$(deploy Loaded);
 log "Loaded deployed at:" $LoadedAddress
 export LOADED=$LoadedADdress
 # Log addresses to file
