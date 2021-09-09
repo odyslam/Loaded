@@ -20,7 +20,16 @@ contract LoadedUser is ERC721Holder {
     function locknload(uint256 tokenId) public {
         loaded.locknload(tokenId);
     }
+    function locknloadWave2(uint256 tokenId) public {
+        loaded.locknloadWave2(tokenId);
    }
+   function ministerOfDefenseLocknload(uint256 tokenId) public {
+       loaded.ministerOfDefenseLocknload(tokenId);
+   }
+   function commanderLocknload(uint256 tokenId) public {
+       loaded.commanderLocknload(tokenId);
+   }
+}
 
 contract LoadedTest is DSTest, ERC721Holder  {
     uint256 internal constant LOAD = 100;
