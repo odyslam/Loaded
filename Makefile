@@ -20,8 +20,9 @@ build  :; dapp build
 test   :; dapp test # --ffi # enable if you need the `ffi` cheat code on HEVM
 clean  :; dapp clean
 lint   :; yarn run lint
-
-size   :;   ./scripts/contract-size.sh ${contract}
+estimate: export ETH_RPC_URL = $(call network,mainnet)
+estimate:; ./scripts/estimate-gas.sh ${contract}
+size   :; ./scripts/contract-size.sh ${contract}
 
 # returns the URL to deploy to a hosted Alchemy node
 # requires the API_KEY env var to be set
@@ -29,10 +30,6 @@ size   :;   ./scripts/contract-size.sh ${contract}
 define network
 	https://eth-$1.alchemyapi.io/v2/${ALCHEMY_API_KEY}
 endef
-
-# Gas estimation helpers
-estimate: export ETH_RPC_URL = $(call network,mainnet)
-estimate: ; ./scripts/estimate-gas.sh ${contract}
 
 # Deployment helpers
 deploy :; @./scripts/deploy.sh
