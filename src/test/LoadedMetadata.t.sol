@@ -5,7 +5,7 @@ import "./utils/LoadedTest.sol";
 
 contract MetadataTest is LoadedTest {
     function testMetadata() public {
-        string memory meta = loaded.ttokenURI(LOAD);
+        string memory meta = loaded.tokenURI(LOAD);
         emit log(meta);
     }
 }
