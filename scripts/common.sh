@@ -74,7 +74,9 @@ estimate_gas() {
      ${TPUT_YELLOW}Fast: $fast gwei \n
      ${TPUT_BLUE}Standard: $standard gwei \n
      ${TPUT_GREEN}Slow: $slow gwei${TPUT_RESET}" | column -t
+     size=$(contract_size $NAME)
      echo "Estimated Gas cost for deployment of $NAME: ${TPUT_BOLD}$GAS${TPUT_RESET} units of gas"
+     echo "Contract Size: ${size} bytes"
      echo "Total cost for deployment:"
      rapid_cost=$(echo "scale=5; $GAS*$rapid/1000000000" | bc)
      fast_cost=$(echo "scale=5; $GAS*$fast/1000000000" | bc)
@@ -101,8 +103,7 @@ contract_size(){
     # get the bytecode from the compiled file
     BYTECODE=0x$(jq -r "$PATTERN.evm.bytecode.object" out/dapp.sol.json)
     length=$(echo $BYTECODE | wc -m )
-    echo "${NAME} contract size: $(( $length / 2 )) bytes"
-    echo "$(( 24576 - $length / 2 )) bytes to reach the smart contract size limit of 24576 bytes."
+    echo $(( $length / 2 ))
 }
 
 
