@@ -6,12 +6,12 @@ import {toString} from "./MetadataUtils.sol";
 /// @author Odysseas Lamtzidis
 /// @notice Helper contract that stores all the available Loadout weapons and perks.
 /// It's also responsible for generating the Loadout kit for every ID. The generated tokens are ERC721 compatible.
-/// @dev The weapons, perks and their stats are public. You can easily access all the weapons, gather their stats and build on top of it.
+
 
 contract LoadedComponents {
 
 /// An array of all available weapons, organized by category.
-    string[48] public primaryWeapons= [
+    string[48] internal primaryWeapons= [
         "SIG MCX", //assault rifles, index = 0
         "M4A1",
         "FAMAS",
@@ -63,7 +63,7 @@ contract LoadedComponents {
     ];
     /// attributes of every weapon, scale of 0 to 10. Attributes are as follows:
     /// [DAMAGE, ACCURACY, RATE OF FIRE]
-    uint256[3][48] public primaryWeaponLevels = [
+    uint256[3][48] internal primaryWeaponLevels = [
     [5,7,6], // assault rifles
     [6,7,7],
     [5,8,4],
@@ -113,7 +113,7 @@ contract LoadedComponents {
     ];
     // Stats for secondary weapons. Scale 0 to 10.
     // [DAMAGE, ACCURACY, RATE OF FIRE]
-   uint256[3][13] public secondaryWeaponLevels = [
+   uint256[3][13] internal secondaryWeaponLevels = [
     [2,4,4], // pistols
     [2,3,3],
     [3,3,2],
@@ -130,7 +130,7 @@ contract LoadedComponents {
    ];
 
    // unicode characters that are used to create the visual effect of a stats bar
-    string[] public levelBars = [
+    string[] internal levelBars = [
         unicode" ",
         unicode"█",
         unicode"██",
@@ -144,7 +144,7 @@ contract LoadedComponents {
         unicode"██████████"
     ];
 
-    string[] public secondaryWeapons = [
+    string[] internal secondaryWeapons = [
         "GLOCK 18", // pistols, index = 0
         "M1911",
         ".357 MAGNUM",
@@ -162,7 +162,7 @@ contract LoadedComponents {
     ];
 
 // Equipment is both grenades and tactical equipment
-    string[] public equipment = [
+    string[] internal equipment = [
         "CLAYMORE",
         "FRAG GRENADE",
         "C4",
@@ -181,7 +181,7 @@ contract LoadedComponents {
     ];
 
 // Perks are loosely defined. Some are skill-based and other role-based. Use your imagination.
-    string[] public perks = [
+    string[] internal perks = [
         "SCAVENGER",
         "GHOST",
         "MEDIC",
@@ -247,7 +247,7 @@ contract LoadedComponents {
         }
 //@notice getPrimaryWeapon returns an index to  pick primary weapon from the primaryWeapon array
     function getPrimaryWeapon(uint256 tokenId)
-        public
+        internal
         view
         returns (uint256 )
     {
@@ -256,7 +256,7 @@ contract LoadedComponents {
 
 ///@notice getSecondaryWeapon returns three uints to be used as indexes  to pick items from the secondaryWeapon array
     function getSecondaryWeapon(uint256 tokenId)
-        public
+        internal
         view
         returns (uint256 )
     {
@@ -264,7 +264,7 @@ contract LoadedComponents {
     }
 ///@notice getEquipment returns three uints to be used as indexes  to pick items from the equipment array
     function getEquipment(uint256 tokenId)
-        public
+        internal
         view
         returns (uint256[3] memory)
     {
@@ -272,7 +272,7 @@ contract LoadedComponents {
     }
 ///@notice getPerks returns three uints to be used as indexes to pick items from the perks array
     function getPerks(uint256 tokenId)
-        public
+        internal
         view
         returns (uint256[3] memory)
     {

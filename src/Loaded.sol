@@ -33,9 +33,9 @@ contract Loaded is ERC721, LoadedMetadata, Ownable, ReentrancyGuard{
         saveSeed(loadId);
         _safeMint(_msgSender(), loadId);
     }
-/// @notice Same claim unction as before, reserved for the creators of the project.
+/// @notice Same claim function as before, reserved for the creators of the project.
     function commanderLocknload(uint256 loadId) public nonReentrant onlyOwner {
-        require(loadId > 9222 && loadId < 10001, "Ser, Loaded has been already locked or you are not the commander");
+        require(loadId > 9222 && loadId < 10001, "Ser, Loaded has been already locked or you are not the Commander");
         saveSeed(loadId);
         _safeMint(owner(), loadId);
     }
