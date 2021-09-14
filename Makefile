@@ -34,8 +34,6 @@ endef
 # Deployment helpers
 deploy :; @./scripts/deploy.sh
 
-source: source .env
-
 # mainnet
 deploy-mainnet: export ETH_RPC_URL = $(call network,mainnet)
 deploy-mainnet: deploy
