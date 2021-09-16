@@ -7,7 +7,6 @@ import {toString} from "./MetadataUtils.sol";
 /// @notice Helper contract that stores all the available Loadout weapons and perks.
 /// It's also responsible for generating the Loadout kit for every ID. The generated tokens are ERC721 compatible.
 
-
 contract LoadedComponents {
 
 /// An array of all available weapons, organized by category.
