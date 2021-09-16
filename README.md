@@ -1,8 +1,13 @@
 # Loaded
 
-ERC721 Smart contract address: [0x65dfc7d6afd14b6fd8d410969e809b0db250f0f5](https://etherscan.io/address/0x65dfc7d6afd14b6fd8d410969e809b0db250f0f5).
 
 Loaded is randomized kits for soldiers.
+
+You can find it on [OpenSea](https://opensea.io/collection/locknloaded).
+
+ERC721 Smart contract address: [0x65dfc7d6afd14b6fd8d410969e809b0db250f0f5](https://etherscan.io/address/0x65dfc7d6afd14b6fd8d410969e809b0db250f0f5).
+
+Every kit, has the following random items:
 
 - Primary Weapon
 - Secondary Weapon
